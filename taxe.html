@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="taxe.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Simulation taxe communale Saint-Aubin-du-Cormier</h1>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <img src="http://www.impots-locaux.net/wp-content/uploads/2009/10/taxe-d-habitation-fonciere.jpg"
+                 class="hidden-xs img-responsive">
+        </div>
+        <div class="col-md-9 text-left">
+            <p>Cet outil fait une évaluation de la
+                <strong>taxe d'habitation&nbsp;</strong>et de la
+                <strong>taxe foncière&nbsp;</strong>à Saint-Aubin-du-Cormier entre 2014 et 2015
+                en fonction de la
+                <strong>valeur locative de votre habitation&nbsp;</strong>(cette valeur est calculée
+                par l'administration fiscale et figure sur votre avis d'imposition) et
+                du
+                <strong>nombre de personnes à charge</strong>.</p>
+
+            <p>La
+                <strong>taxe foncière e</strong>st payée par le propriétaire du logement. La
+                <strong>taxe d'habitation&nbsp;</strong>est payée par l'occupant au 1er janvier
+                <br>
+            </p>
+
+            <p>Parmi les exonérations, abattements ou réductions applicables à la taxe
+                d'habitation, seuls sont pris en compte ici les abattements obligatoires
+                pour charges de famille</p>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-info">
+                <strong>Attention !</strong>&nbsp;Les résultats sont indicatifs et ne sont pas
+                opposables à l'administration fiscale ! L'objectif de cet outil est de vous permettre
+                d'évaluer l'impact de l'augmentation de la part communale sur vos taxes.
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <h3>Comment calculer la part communale de votre taxe d'habitation et de votre
+                taxe foncière ?</h3>
+
+            <p>Il faut d'abord retrouver la valeur locative de votre habitation. Vous la trouverez
+                sur votre avis d'imposition (cliquez sur l'image pour l'agrandir). Il vous
+                suffit ensuite de la reporter ci-dessous dans le formulaire (champ « Valeur
+                locative brute ») ; le simulateur vous indiquera mensuellement l'évolution
+                de vos taxes.</p>
+
+            <h3>Le montant indiqué ne correspond pas à ce que je paie</h3>
+
+            <p>Cette évaluation calcule uniquement la part communale. La part intercommunale
+                et la taxe d'équipement ne sont pas évalués.
+                <br>
+            </p>
+        </div>
+        <div class="col-md-3 hidden-xs">
+
+            <div class="btn" data-toggle="modal" data-target="#exempleTaxeHabitation"><img
+                    src="http://imageshack.com/a/img905/4156/XSQwnl.png" width="200px"
+                    class="img-responsive"></div>
+
+            <div id="exempleTaxeHabitation" class="modal fade" tabindex="-1" role="dialog"
+                 aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <img src="http://imageshack.com/a/img538/2107/MWLcGE.png"
+                                 class="img-responsive">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Évaluation</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <form class="form-horizontal text-left" id="taxesForm">
+                <fieldset>
+                    <legend>Vos informations</legend>
+                    <div class="form-group has-feedback">
+                        <div class="col-sm-4">
+                            <label for="valeur_locative_brute" class="control-label">Valeur locative brute</label>
+                        </div>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="valeur_locative_brute"
+                                   placeholder="Valeur locative brute"
+                                   min="0" max="15000" data-trigger="focus" data-toggle="tooltip"
+                                   title="La valeur locative brute correspond au loyer théorique auquel l’Administration estime que votre bien pourrait être loué. Elle apparaît sur l'avis d'imposition de la taxe d'habitation. Elle est d'environ 2&nbsp;450&nbsp;€ en moyenne, mais peut atteindre 6&nbsp;000&nbsp;€ en fonction de la superficie et des commodités."
+                                   value="0">
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <div class="col-sm-4">
+                            <label for="personnes_a_charge" class="control-label">Personnes à charge</label>
+                        </div>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="personnes_a_charge"
+                                   placeholder="Nombre de personnes à charge"
+                                   min="0" max="20" data-trigger="focus" data-toggle="tooltip"
+                                   title="Nombre d'enfants vivant au foyer"
+                                   value="0">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-4">
+                            <label class="col-sm-4 control-label">Période</label>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-default active">
+                                    <input type="radio" name="periode" value="mois">Par mois</label>
+                                <label class="btn btn-default">
+                                    <input type="radio" name="periode" value="an">Par an</label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <div id="resultats">
+                <legend>Vos résultats</legend>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>Taxe</th>
+                        <th>2014</th>
+                        <th>2015</th>
+                        <th>Différence</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">Habitation</th>
+                        <td id="th-2014">th-2014</td>
+                        <td id="th-2015">th-2015</td>
+                        <td id="th-diff">tf-diff</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Foncière</th>
+                        <td id="tf-2014">th-2014</td>
+                        <td id="tf-2015">th-2015</td>
+                        <td id="tf-diff">tf-diff</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="hidden-xs" id="grapheEvol"></div>
+        </div>
+        <div class="col-md-6">
+            <div id="graphe" class="hidden-xs"></div>
+        </div>
+    </div>
+</div>
+<script src="http://code.jquery.com/jquery-2.1.0.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/data.js"></script>
+<script src="http://code.highcharts.com/modules/drilldown.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="taxe.js"></script>
+</body>
+
+</html>

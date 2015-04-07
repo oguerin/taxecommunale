@@ -8,6 +8,7 @@ $(function () {
     var HAUSSE_BASE = 1.02;
 
     $('#valeur_locative_brute').val(VAL_MOY_TH_2015);
+    $('#personnes_a_charge').val(2);
 
     $('[data-toggle="tooltip"]').tooltip();
 
@@ -83,7 +84,7 @@ $(function () {
             type: 'column'
         },
         title: {
-            text: 'Variation'
+            text: 'Variation des taxes'
         },
         xAxis: {
             categories: ['Taxe d\'habitation', 'Taxe foncière']

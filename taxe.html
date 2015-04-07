@@ -111,12 +111,12 @@
                     <legend>Vos informations</legend>
                     <div class="form-group has-feedback">
                         <div class="col-sm-4">
-                            <label for="valeur_locative_brute" class="control-label">Valeur locative brute</label>
+                            <label for="valeur_locative_brute" class="control-label">Valeur locative brute 2014</label>
                         </div>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="valeur_locative_brute"
+                            <input type="number" class="form-control" id="valeur_locative_brute"
                                    placeholder="Valeur locative brute"
-                                   min="0" max="15000" data-trigger="focus" data-toggle="tooltip"
+                                   min="0" max="15000" step=10 data-trigger="focus" data-toggle="tooltip"
                                    title="La valeur locative brute correspond au loyer théorique auquel l’Administration estime que votre bien pourrait être loué. Elle apparaît sur l'avis d'imposition de la taxe d'habitation. Elle est d'environ 2&nbsp;450&nbsp;€ en moyenne, mais peut atteindre 6&nbsp;000&nbsp;€ en fonction de la superficie et des commodités."
                                    value="0">
                         </div>
@@ -126,10 +126,10 @@
                             <label for="personnes_a_charge" class="control-label">Personnes à charge</label>
                         </div>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="personnes_a_charge"
+                            <input type="number" class="form-control" id="personnes_a_charge"
                                    placeholder="Nombre de personnes à charge"
-                                   min="0" max="20" data-trigger="focus" data-toggle="tooltip"
-                                   title="Nombre d'enfants vivant au foyer"
+                                   min="0" max="20" data-trigger="focus" data-toggle="tooltip" data-placement="right"
+                                   title="Nombre de personnes autres que votre conjoint et vous, qui sont rattachées au foyer fiscal."
                                    value="0">
                         </div>
                     </div>

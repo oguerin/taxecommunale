@@ -134,7 +134,7 @@ $(function () {
         var base_habitation_2014 = valeur_locative_brute - VAL_MOY_TH_2014*(Math.min(personnes_a_charge, 2)*0.1 + Math.max(personnes_a_charge-2, 0)*0.15);
         var base_habitation_2015 = valeur_locative_brute - VAL_MOY_TH_2015*(Math.min(personnes_a_charge, 2)*0.1 + Math.max(personnes_a_charge-2, 0)*0.15);
         console.log('base habitation 2014 '+base_habitation_2014+', 2014 ' + base_habitation_2015);
-        var taxe_habitation = [Math.round(base_habitation_2014*TAUX_TH_2014/divPeriode), Math.round(base_habitation_2015*TAUX_TH_2015*HAUSSE_BASE/divPeriode)];
+        var taxe_habitation = [Math.max(0, Math.round(base_habitation_2014*TAUX_TH_2014/divPeriode)), Math.max(0, Math.round(base_habitation_2015*TAUX_TH_2015*HAUSSE_BASE/divPeriode))];
         var base_fonciere = valeur_locative_brute / 2;
         var taxe_fonciere = [Math.round(base_fonciere*TAUX_TF_2014/divPeriode), Math.round(base_fonciere*TAUX_TF_2015*HAUSSE_BASE/divPeriode)];
         console.log('base foncière: '+base_fonciere);
@@ -142,13 +142,15 @@ $(function () {
     }
     dessineGraphe = function() {
         var periode = $("input[name='periode']:checked").val();
-        var valeur_locative_brute = parseInt($('#valeur_locative_brute').val());
-        var personnes_a_charge = parseInt($('#personnes_a_charge').val());
+        var valeur_locative_brute = parseInt($('#valeur_locative_brute').val()) || 0;
+        var personnes_a_charge = parseInt($('#personnes_a_charge').val()) || 0;
         var taxes = calculeTaxe(valeur_locative_brute, personnes_a_charge, periode);
         var th_2014 = taxes[0][0];
         var th_2015 = taxes[0][1];
         var tf_2014 = taxes[1][0];
         var tf_2015 = taxes[1][1];
+
+        $('#resultats legend').text('Vos résultats par ' + ((periode == 'an') ? 'an' : 'mois'));
 
         $('#graphe').highcharts().series[0].update({
             data: taxes[0]
